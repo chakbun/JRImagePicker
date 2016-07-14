@@ -3,7 +3,7 @@
 //  CameraLapTimer
 //
 //  Created by Jaben on 15-1-14.
-//  Copyright (c) 2015年 xpg. All rights reserved.
+//  Copyright (c) 2015年 Jaben. All rights reserved.
 //
 
 #import "JRImagePicker.h"

@@ -87,8 +87,10 @@
 #pragma mark --ImagePickerController Delegate
 
 - (void)imagePickerController:(UIImagePickerController *)picker didFinishPickingMediaWithInfo:(NSDictionary *)info {
+#ifdef DEBUG
     NSLog(@"============ didFinishPickingMediaWithInfo ============");
     NSLog(@"info : %@",[info description]);
+#endif
     [picker dismissViewControllerAnimated:YES completion:^{
         UIImage *image = [info objectForKey:UIImagePickerControllerOriginalImage];
         if (self.imageBlock) {
@@ -98,7 +100,9 @@
 }
 
 - (void)imagePickerControllerDidCancel:(UIImagePickerController *)picker {
+#ifdef DEBUG
     NSLog(@"============ imagePickerControllerDidCancel ============");
+#endif
     [picker dismissViewControllerAnimated:YES completion:^{}];
 }
 @end

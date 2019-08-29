@@ -32,16 +32,12 @@
 #pragma mark --Public
     
 - (void)launchImagePickerIn:(UIViewController *)controller sourceType:(UIImagePickerControllerSourceType)type completionHandler:(JRImagePickerImageBlock)completed {
-    [self loadImagePickerOnController:controller type:type completionHandler:completed];
-}
-
-#pragma mark --Misc
-
-- (void)loadImagePickerOnController:(UIViewController *)controller type:(UIImagePickerControllerSourceType)type completionHandler:(JRImagePickerImageBlock)completed {
     self.rootController = controller;
     self.imageBlock = completed;
     [self loadImagePick:type];
 }
+
+#pragma mark --Misc
 
 - (void)loadImagePick:(UIImagePickerControllerSourceType)sourceType {
     

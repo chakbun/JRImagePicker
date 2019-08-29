@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -25,13 +25,27 @@
                                 </constraints>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ydr-SR-rrm">
-                                <rect key="frame" x="144" y="50" width="87" height="40"/>
+                                <rect key="frame" x="146" y="50" width="83" height="40"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="1EA-ql-73I"/>
                                 </constraints>
-                                <state key="normal" title="select image"/>
+                                <state key="normal" title="photoLibary"/>
                                 <connections>
                                     <action selector="selectImageButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="1hX-bN-FfD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rxc-zl-EoO">
+                                <rect key="frame" x="16" y="50" width="83" height="40"/>
+                                <state key="normal" title="photoAlumn"/>
+                                <connections>
+                                    <action selector="selectImageButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="hq9-C7-nnG"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Phc-8q-PL7">
+                                <rect key="frame" x="276" y="50" width="83" height="40"/>
+                                <state key="normal" title="Camera"/>
+                                <connections>
+                                    <action selector="selectImageButtonAction:" destination="BYZ-38-t0r" eventType="touchUpInside" id="fgR-FP-Ec4"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -39,15 +53,27 @@
                         <constraints>
                             <constraint firstItem="Ydr-SR-rrm" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="0Ki-C9-299"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="IkT-zK-iuG" secondAttribute="trailing" constant="16" id="2kl-Y7-L73"/>
+                            <constraint firstItem="Rxc-zl-EoO" firstAttribute="width" secondItem="Ydr-SR-rrm" secondAttribute="width" id="8sB-m5-qZL"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Phc-8q-PL7" secondAttribute="trailing" constant="16" id="AtW-Q1-XPd"/>
+                            <constraint firstItem="Rxc-zl-EoO" firstAttribute="height" secondItem="Ydr-SR-rrm" secondAttribute="height" id="XrE-Nt-uHi"/>
+                            <constraint firstItem="Rxc-zl-EoO" firstAttribute="centerY" secondItem="Ydr-SR-rrm" secondAttribute="centerY" id="dD4-KU-Gsh"/>
+                            <constraint firstItem="Phc-8q-PL7" firstAttribute="centerY" secondItem="Ydr-SR-rrm" secondAttribute="centerY" id="dOa-c4-IBl"/>
+                            <constraint firstItem="Rxc-zl-EoO" firstAttribute="width" secondItem="Phc-8q-PL7" secondAttribute="width" id="ecw-N4-Bky"/>
+                            <constraint firstItem="Rxc-zl-EoO" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="h5X-Vd-34T"/>
                             <constraint firstItem="IkT-zK-iuG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="mCL-Jd-1Xk"/>
+                            <constraint firstItem="Ydr-SR-rrm" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Rxc-zl-EoO" secondAttribute="trailing" constant="8" symbolic="YES" id="nPD-J1-kGi"/>
                             <constraint firstItem="IkT-zK-iuG" firstAttribute="top" secondItem="Ydr-SR-rrm" secondAttribute="bottom" constant="20" id="nfJ-Cr-3xA"/>
                             <constraint firstItem="Ydr-SR-rrm" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="onI-r2-r5t"/>
+                            <constraint firstItem="Phc-8q-PL7" firstAttribute="leading" relation="greaterThanOrEqual" secondItem="Ydr-SR-rrm" secondAttribute="trailing" constant="8" symbolic="YES" id="or3-QK-tk0"/>
+                            <constraint firstItem="Rxc-zl-EoO" firstAttribute="height" secondItem="Phc-8q-PL7" secondAttribute="height" id="pyc-Gf-JGa"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="albumnButton" destination="Rxc-zl-EoO" id="E9Q-ag-0RR"/>
+                        <outlet property="cameraButton" destination="Phc-8q-PL7" id="R4M-hl-7DW"/>
+                        <outlet property="libraryButton" destination="Ydr-SR-rrm" id="wcX-Ph-BfM"/>
                         <outlet property="preImageView" destination="IkT-zK-iuG" id="Uzp-AG-cj1"/>
-                        <outlet property="selectImageButton" destination="Ydr-SR-rrm" id="Egb-1Z-lEq"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

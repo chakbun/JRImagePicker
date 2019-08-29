@@ -22,7 +22,7 @@ typedef void (^JRImagePickerImageBlock)(UIImage *image);
 @property (nonatomic, strong) UIView *popAtView;
 
 + (instancetype)shareManager;
-- (void)loadImageFromCamera:(UIViewController *)controller completionHandler:(JRImagePickerImageBlock)completed;
-- (void)loadImageFromPhotoLibrary:(UIViewController *)controller completionHandler:(JRImagePickerImageBlock)completed;
-- (void)loadImageFromPhotoAlbum:(UIViewController *)controller completionHandler:(JRImagePickerImageBlock)completed;
+    
+- (void)launchImagePickerIn:(UIViewController *)controller sourceType:(UIImagePickerControllerSourceType)type completionHandler:(JRImagePickerImageBlock)completed;
+    
 @end

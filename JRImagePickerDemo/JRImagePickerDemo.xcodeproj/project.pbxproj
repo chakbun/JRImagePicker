@@ -14,7 +14,7 @@
 		00911A512317AAED00206249 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 00911A4F2317AAED00206249 /* LaunchScreen.storyboard */; };
 		00911A542317AAED00206249 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 00911A532317AAED00206249 /* main.m */; };
 		00911A5E2317AB0B00206249 /* JRImagePicker.m in Sources */ = {isa = PBXBuildFile; fileRef = 00911A5B2317AB0B00206249 /* JRImagePicker.m */; };
-		00911A5F2317AB0B00206249 /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = 00911A5C2317AB0B00206249 /* README.md */; };
+		DF29F590231805B3009B3CBC /* README.md in Resources */ = {isa = PBXBuildFile; fileRef = DF29F58F231805B3009B3CBC /* README.md */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,8 +29,8 @@
 		00911A522317AAED00206249 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		00911A532317AAED00206249 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		00911A5B2317AB0B00206249 /* JRImagePicker.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JRImagePicker.m; sourceTree = "<group>"; };
-		00911A5C2317AB0B00206249 /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		00911A5D2317AB0B00206249 /* JRImagePicker.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JRImagePicker.h; sourceTree = "<group>"; };
+		DF29F58F231805B3009B3CBC /* README.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../../README.md; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,6 +63,7 @@
 		00911A432317AAE100206249 /* JRImagePickerDemo */ = {
 			isa = PBXGroup;
 			children = (
+				DF29F58F231805B3009B3CBC /* README.md */,
 				00911A5A2317AB0B00206249 /* JRImagePicker */,
 				00911A442317AAE100206249 /* AppDelegate.h */,
 				00911A452317AAE100206249 /* AppDelegate.m */,
@@ -82,7 +83,6 @@
 			children = (
 				00911A5D2317AB0B00206249 /* JRImagePicker.h */,
 				00911A5B2317AB0B00206249 /* JRImagePicker.m */,
-				00911A5C2317AB0B00206249 /* README.md */,
 			);
 			name = JRImagePicker;
 			path = ../../JRImagePicker;
@@ -147,7 +147,7 @@
 			files = (
 				00911A512317AAED00206249 /* LaunchScreen.storyboard in Resources */,
 				00911A4E2317AAED00206249 /* Assets.xcassets in Resources */,
-				00911A5F2317AB0B00206249 /* README.md in Resources */,
+				DF29F590231805B3009B3CBC /* README.md in Resources */,
 				00911A4C2317AAE100206249 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

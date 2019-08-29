@@ -30,17 +30,9 @@
 }
 
 #pragma mark --Public
-
-- (void)loadImageFromCamera:(UIViewController *)controller completionHandler:(JRImagePickerImageBlock)completed {
-    [self loadImagePickerOnController:controller type:UIImagePickerControllerSourceTypeCamera completionHandler:completed];
-}
-
-- (void)loadImageFromPhotoLibrary:(UIViewController *)controller completionHandler:(JRImagePickerImageBlock)completed {
-    [self loadImagePickerOnController:controller type:UIImagePickerControllerSourceTypePhotoLibrary completionHandler:completed];
-}
-
-- (void)loadImageFromPhotoAlbum:(UIViewController *)controller completionHandler:(JRImagePickerImageBlock)completed {
-    [self loadImagePickerOnController:controller type:UIImagePickerControllerSourceTypeSavedPhotosAlbum completionHandler:completed];
+    
+- (void)launchImagePickerIn:(UIViewController *)controller sourceType:(UIImagePickerControllerSourceType)type completionHandler:(JRImagePickerImageBlock)completed {
+    [self loadImagePickerOnController:controller type:type completionHandler:completed];
 }
 
 #pragma mark --Misc
@@ -63,11 +55,12 @@
             if ([UIImagePickerController isCameraDeviceAvailable:UIImagePickerControllerCameraDeviceRear] || [UIImagePickerController isCameraDeviceAvailable:UIImagePickerControllerCameraDeviceFront]) {
                 [imagePicker setSourceType:sourceType];
                 [imagePicker setAllowsEditing:NO];
+                imagePicker.modalPresentationStyle = UIModalPresentationFullScreen;
                 [self.rootController presentViewController:imagePicker animated:YES completion:^{}];
             }
             break;
         }
-        case UIImagePickerControllerSourceTypeSavedPhotosAlbum:{
+        default: {
             [imagePicker setSourceType:sourceType];
             [imagePicker setAllowsEditing:NO];
             imagePicker.modalPresentationStyle = self.presentStyle;
@@ -77,18 +70,6 @@
             [self.rootController presentViewController:imagePicker animated:YES completion:^{}];
             break;
         }
-        case UIImagePickerControllerSourceTypePhotoLibrary:{
-            [imagePicker setSourceType:sourceType];
-            [imagePicker setAllowsEditing:NO];
-            imagePicker.modalPresentationStyle = self.presentStyle;
-            if (self.popAtView && imagePicker.modalPresentationStyle != UIModalPresentationFullScreen) {
-                imagePicker.popoverPresentationController.barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.popAtView];
-            }
-            [self.rootController presentViewController:imagePicker animated:YES completion:^{}];
-            break;
-        }
-        default:
-            break;
     }
 }
 

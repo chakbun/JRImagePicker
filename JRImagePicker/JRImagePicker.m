@@ -24,21 +24,22 @@
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
         shareManager =[[JRImagePicker alloc] init];
+        shareManager.presentStyle = UIModalPresentationFullScreen;
     });
     return shareManager;
 }
 
 #pragma mark --Public
 
-- (void)loadImageFromiPhoneCamera:(UIViewController *)controller completionHandler:(JRImagePickerImageBlock)completed {
+- (void)loadImageFromCamera:(UIViewController *)controller completionHandler:(JRImagePickerImageBlock)completed {
     [self loadImagePickerOnController:controller type:UIImagePickerControllerSourceTypeCamera completionHandler:completed];
 }
 
-- (void)loadImageFromiPhonePhotoLibrary:(UIViewController *)controller completionHandler:(JRImagePickerImageBlock)completed {
+- (void)loadImageFromPhotoLibrary:(UIViewController *)controller completionHandler:(JRImagePickerImageBlock)completed {
     [self loadImagePickerOnController:controller type:UIImagePickerControllerSourceTypePhotoLibrary completionHandler:completed];
 }
 
-- (void)loadImageFromiPhonePhotoAlbum:(UIViewController *)controller completionHandler:(JRImagePickerImageBlock)completed {
+- (void)loadImageFromPhotoAlbum:(UIViewController *)controller completionHandler:(JRImagePickerImageBlock)completed {
     [self loadImagePickerOnController:controller type:UIImagePickerControllerSourceTypeSavedPhotosAlbum completionHandler:completed];
 }
 
@@ -69,12 +70,20 @@
         case UIImagePickerControllerSourceTypeSavedPhotosAlbum:{
             [imagePicker setSourceType:sourceType];
             [imagePicker setAllowsEditing:NO];
+            imagePicker.modalPresentationStyle = self.presentStyle;
+            if (self.popAtView && imagePicker.modalPresentationStyle != UIModalPresentationFullScreen) {
+                imagePicker.popoverPresentationController.barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.popAtView];
+            }
             [self.rootController presentViewController:imagePicker animated:YES completion:^{}];
             break;
         }
         case UIImagePickerControllerSourceTypePhotoLibrary:{
             [imagePicker setSourceType:sourceType];
             [imagePicker setAllowsEditing:NO];
+            imagePicker.modalPresentationStyle = self.presentStyle;
+            if (self.popAtView && imagePicker.modalPresentationStyle != UIModalPresentationFullScreen) {
+                imagePicker.popoverPresentationController.barButtonItem = [[UIBarButtonItem alloc] initWithCustomView:self.popAtView];
+            }
             [self.rootController presentViewController:imagePicker animated:YES completion:^{}];
             break;
         }
